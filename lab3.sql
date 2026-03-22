@@ -76,3 +76,32 @@ ORDER BY price ASC
 LIMIT 3;
 
 --pg_dump -U postgres -d lab3 -f lab3.sql
+
+INSERT INTO customers (full_name, phone, address) VALUES
+('Nguyễn Văn An', '0901234567', '123 Lê Lợi, TP.HCM'),
+('Trần Thị Bình', '0912345678', '456 Nguyễn Huệ, Hà Nội'),
+('Lê Văn Cường', '0987654321', '789 Trần Hưng Đạo, Đà Nẵng'),
+('Phạm Minh Đức', '0933445566', '101 Hai Bà Trưng, Cần Thơ'),
+('Nguyễn Văn Em', '0944556677', '202 Lý Tự Trọng, Hải Phòng');
+
+INSERT INTO products (product_name, price) VALUES
+('Laptop Dell XPS', 25000000),
+('iPhone 15 Pro', 28000000),
+('Chuột Logitech G502', 1200000),
+('Bàn phím cơ Akko', 1500000),
+('Màn hình LG 27 inch', 5500000);
+
+INSERT INTO orders (customer_id, order_date, total_amount) VALUES
+(1, '2023-10-01 10:00:00', 26200000),
+(2, '2023-10-02 11:30:00', 28000000),
+(3, '2023-10-03 09:15:00', 1200000),
+(1, '2023-10-04 14:45:00', 1500000),
+(5, '2023-10-05 16:20:00', 5500000);
+
+INSERT INTO order_details (order_id, product_id, quantity, unit_price) VALUES
+(1, 1, 1, 25000000),
+(1, 3, 1, 1200000),  
+(2, 2, 1, 28000000), 
+(3, 3, 1, 1200000),  
+(4, 4, 1, 1500000),  
+(5, 5, 1, 5500000);  
